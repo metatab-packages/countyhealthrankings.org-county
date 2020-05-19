@@ -1,0 +1,831 @@
+Declare,metatab-latest
+Title,County Health Rakings
+Description,"The County Health Rankings & Roadmaps is a collection of over 150 measures of health deographics, crime and environmental factors."
+,
+,
+,
+,
+,
+Identifier,64b03215-0048-4e04-b532-43a9f2c281c4
+Name,countyhealthrankings.org-county-1.1.2
+Dataset,county
+Origin,countyhealthrankings.org
+Time,
+Space,
+Grain,
+Variant,
+Version,1.1.2
+Version.Major,1
+Version.Minor,1
+Version.Patch,2
+UpdateFrequency,P6M
+Group,health
+Created,2020-05-13T15:07:53
+Modified,2020-05-09T17:55:25
+UpdateFrequency,P1W
+Giturl,https://github.com/CivicKnowledge/tablecloth.io.git
+
+Section,Contacts,Email,Organization,Url
+Wrangler,Eric Busboom,eric@civicknowledge.com,Civic Knowledge,http://civicknowledge.com
+
+Section,Documentation,Title,Description,
+Documentation,file:README.md,README,,
+Homepage,https://www.countyhealthrankings.org/,homepage,Project homepage,
+Documentation,https://www.countyhealthrankings.org/sites/default/files/media/document/2020%20Analytic%20Documentation_0.pdf,documentation,Primary documentation,
+Downloadpage,https://www.countyhealthrankings.org/explore-health-rankings/rankings-data-documentation,data_download,Page with links to data files and documentation,
+
+Section,References,Name,Description,
+Reference,https://www.countyhealthrankings.org/sites/default/files/media/document/analytic_data2020.csv,source,County-level statistics for a variety of health measures,
+
+Section,Resources,Name,Description,
+Datafile,python:pylib#row_generator,county_health_rankings,Complete datafile with all measures and supporting values. Over 800 columns.,
+
+Section,Schema,DataType,Description,Transform
+Table,county_health_rankings,,
+Table.Column,geoid,string,County geoid
+Table.Column,statecode,integer,State FIPS Code
+Table.Column,countycode,integer,County FIPS Code
+Table.Column,fipscode,integer,5-digit FIPS Code
+Table.Column,state,string,State Abbreviation
+Table.Column,county,string,Name
+Table.Column,year,integer,Release Year
+Table.Column,county_ranked,integer,County Ranked (Yes=1/No=0)
+Table.Column,v001_rawvalue,number,Premature death raw value
+Table.Column,v001_numerator,integer,Premature death numerator
+Table.Column,v001_denominator,integer,Premature death denominator
+Table.Column,v001_cilow,number,Premature death CI low
+Table.Column,v001_cihigh,number,Premature death CI high
+Table.Column,v001_flag,integer,Premature death flag (0 = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v001_race_aian,number,Premature death (AIAN)
+Table.Column,v001_race_aian_cilow,number,Premature death CI low (AIAN)
+Table.Column,v001_race_aian_cihigh,number,Premature death CI high (AIAN)
+Table.Column,v001_race_aian_flag,integer,Premature death flag (AIAN) (. = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v001_race_asian,number,Premature death (Asian/Pacific Islander)
+Table.Column,v001_race_asian_cilow,number,Premature death CI low (Asian/Pacific Islander)
+Table.Column,v001_race_asian_cihigh,number,Premature death CI high (Asian/Pacific Islander)
+Table.Column,v001_race_asian_flag,integer,Premature death flag (Asian/Pacific Islander) (. = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v001_race_black,number,Premature death (Black)
+Table.Column,v001_race_black_cilow,number,Premature death CI low (Black)
+Table.Column,v001_race_black_cihigh,number,Premature death CI high (Black)
+Table.Column,v001_race_black_flag,integer,Premature death flag (Black) (. = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v001_race_hispanic,number,Premature death (Hispanic)
+Table.Column,v001_race_hispanic_cilow,number,Premature death CI low (Hispanic)
+Table.Column,v001_race_hispanic_cihigh,number,Premature death CI high (Hispanic)
+Table.Column,v001_race_hispanic_flag,integer,Premature death flag (Hispanic) (. = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v001_race_white,number,Premature death (White)
+Table.Column,v001_race_white_cilow,number,Premature death CI low (White)
+Table.Column,v001_race_white_cihigh,number,Premature death CI high (White)
+Table.Column,v001_race_white_flag,integer,Premature death flag (White) (. = No Flag/1=Unreliable/2=Suppressed)
+Table.Column,v002_rawvalue,number,Poor or fair health raw value
+Table.Column,v002_numerator,number,Poor or fair health numerator
+Table.Column,v002_denominator,number,Poor or fair health denominator
+Table.Column,v002_cilow,number,Poor or fair health CI low
+Table.Column,v002_cihigh,number,Poor or fair health CI high
+Table.Column,v036_rawvalue,number,Poor physical health days raw value
+Table.Column,v036_numerator,number,Poor physical health days numerator
+Table.Column,v036_denominator,number,Poor physical health days denominator
+Table.Column,v036_cilow,number,Poor physical health days CI low
+Table.Column,v036_cihigh,number,Poor physical health days CI high
+Table.Column,v042_rawvalue,number,Poor mental health days raw value
+Table.Column,v042_numerator,number,Poor mental health days numerator
+Table.Column,v042_denominator,number,Poor mental health days denominator
+Table.Column,v042_cilow,number,Poor mental health days CI low
+Table.Column,v042_cihigh,number,Poor mental health days CI high
+Table.Column,v037_rawvalue,number,Low birthweight raw value
+Table.Column,v037_numerator,integer,Low birthweight numerator
+Table.Column,v037_denominator,integer,Low birthweight denominator
+Table.Column,v037_cilow,number,Low birthweight CI low
+Table.Column,v037_cihigh,number,Low birthweight CI high
+Table.Column,v037_flag,integer,LBW unreliable indicator (Unreliable = Numerator < 20 or relative standard error > 20%)
+Table.Column,v037_race_aian,number,Low birthweight (AIAN)
+Table.Column,v037_race_aian_cilow,number,Low birthweight CI low (AIAN)
+Table.Column,v037_race_aian_cihigh,number,Low birthweight CI high (AIAN)
+Table.Column,v037_race_asian,number,Low birthweight (Asian/Pacific Islander)
+Table.Column,v037_race_asian_cilow,number,Low birthweight CI low (Asian/Pacific Islander)
+Table.Column,v037_race_asian_cihigh,number,Low birthweight CI high (Asian/Pacific Islander)
+Table.Column,v037_race_black,number,Low birthweight (Black)
+Table.Column,v037_race_black_cilow,number,Low birthweight CI low (Black)
+Table.Column,v037_race_black_cihigh,number,Low birthweight CI high (Black)
+Table.Column,v037_race_hispanic,number,Low birthweight (Hispanic)
+Table.Column,v037_race_hispanic_cilow,number,Low birthweight CI low (Hispanic)
+Table.Column,v037_race_hispanic_cihigh,number,Low birthweight CI high (Hispanic)
+Table.Column,v037_race_white,number,Low birthweight (White)
+Table.Column,v037_race_white_cilow,number,Low birthweight CI low (White)
+Table.Column,v037_race_white_cihigh,number,Low birthweight CI high (White)
+Table.Column,v009_rawvalue,number,Adult smoking raw value
+Table.Column,v009_numerator,number,Adult smoking numerator
+Table.Column,v009_denominator,number,Adult smoking denominator
+Table.Column,v009_cilow,number,Adult smoking CI low
+Table.Column,v009_cihigh,number,Adult smoking CI high
+Table.Column,v011_rawvalue,number,Adult obesity raw value
+Table.Column,v011_numerator,integer,Adult obesity numerator
+Table.Column,v011_denominator,number,Adult obesity denominator
+Table.Column,v011_cilow,number,Adult obesity CI low
+Table.Column,v011_cihigh,number,Adult obesity CI high
+Table.Column,v133_rawvalue,number,Food environment index raw value
+Table.Column,v133_numerator,number,Food environment index numerator
+Table.Column,v133_denominator,number,Food environment index denominator
+Table.Column,v133_cilow,number,Food environment index CI low
+Table.Column,v133_cihigh,number,Food environment index CI high
+Table.Column,v070_rawvalue,number,Physical inactivity raw value
+Table.Column,v070_numerator,integer,Physical inactivity numerator
+Table.Column,v070_denominator,number,Physical inactivity denominator
+Table.Column,v070_cilow,number,Physical inactivity CI low
+Table.Column,v070_cihigh,number,Physical inactivity CI high
+Table.Column,v132_rawvalue,number,Access to exercise opportunities raw value
+Table.Column,v132_numerator,integer,Access to exercise opportunities numerator
+Table.Column,v132_denominator,integer,Access to exercise opportunities denominator
+Table.Column,v132_cilow,number,Access to exercise opportunities CI low
+Table.Column,v132_cihigh,number,Access to exercise opportunities CI high
+Table.Column,v049_rawvalue,number,Excessive drinking raw value
+Table.Column,v049_numerator,number,Excessive drinking numerator
+Table.Column,v049_denominator,number,Excessive drinking denominator
+Table.Column,v049_cilow,number,Excessive drinking CI low
+Table.Column,v049_cihigh,number,Excessive drinking CI high
+Table.Column,v134_rawvalue,number,Alcohol-impaired driving deaths raw value
+Table.Column,v134_numerator,integer,Alcohol-impaired driving deaths numerator
+Table.Column,v134_denominator,integer,Alcohol-impaired driving deaths denominator
+Table.Column,v134_cilow,number,Alcohol-impaired driving deaths CI low
+Table.Column,v134_cihigh,number,Alcohol-impaired driving deaths CI high
+Table.Column,v045_rawvalue,number,Sexually transmitted infections raw value
+Table.Column,v045_numerator,integer,Sexually transmitted infections numerator
+Table.Column,v045_denominator,integer,Sexually transmitted infections denominator
+Table.Column,v045_cilow,number,Sexually transmitted infections CI low
+Table.Column,v045_cihigh,number,Sexually transmitted infections CI high
+Table.Column,v014_rawvalue,number,Teen births raw value
+Table.Column,v014_numerator,integer,Teen births numerator
+Table.Column,v014_denominator,integer,Teen births denominator
+Table.Column,v014_cilow,number,Teen births CI low
+Table.Column,v014_cihigh,number,Teen births CI high
+Table.Column,v014_race_aian,number,Teen births (AIAN)
+Table.Column,v014_race_aian_cilow,number,Teen births CI low (AIAN)
+Table.Column,v014_race_aian_cihigh,number,Teen births CI high (AIAN)
+Table.Column,v014_race_asian,number,Teen births (Asian/Pacific Islander)
+Table.Column,v014_race_asian_cilow,number,Teen births CI low (Asian/Pacific Islander)
+Table.Column,v014_race_asian_cihigh,number,Teen births CI high (Asian/Pacific Islander)
+Table.Column,v014_race_black,number,Teen births (Black)
+Table.Column,v014_race_black_cilow,number,Teen births CI low (Black)
+Table.Column,v014_race_black_cihigh,number,Teen births CI high (Black)
+Table.Column,v014_race_hispanic,number,Teen births (Hispanic)
+Table.Column,v014_race_hispanic_cilow,number,Teen births CI low (Hispanic)
+Table.Column,v014_race_hispanic_cihigh,number,Teen births CI high (Hispanic)
+Table.Column,v014_race_white,number,Teen births (White)
+Table.Column,v014_race_white_cilow,number,Teen births CI low (White)
+Table.Column,v014_race_white_cihigh,number,Teen births CI high (White)
+Table.Column,v085_rawvalue,number,Uninsured raw value
+Table.Column,v085_numerator,integer,Uninsured numerator
+Table.Column,v085_denominator,integer,Uninsured denominator
+Table.Column,v085_cilow,number,Uninsured CI low
+Table.Column,v085_cihigh,number,Uninsured CI high
+Table.Column,v004_rawvalue,number,Primary care physicians raw value
+Table.Column,v004_numerator,integer,Primary care physicians numerator
+Table.Column,v004_denominator,integer,Primary care physicians denominator
+Table.Column,v004_cilow,number,Primary care physicians CI low
+Table.Column,v004_cihigh,number,Primary care physicians CI high
+Table.Column,v004_other_data_1,number,Ratio of population to primary care physicians.
+Table.Column,v088_rawvalue,number,Dentists raw value
+Table.Column,v088_numerator,integer,Dentists numerator
+Table.Column,v088_denominator,integer,Dentists denominator
+Table.Column,v088_cilow,number,Dentists CI low
+Table.Column,v088_cihigh,number,Dentists CI high
+Table.Column,v088_other_data_1,number,Ratio of population to dentists.
+Table.Column,v062_rawvalue,number,Mental health providers raw value
+Table.Column,v062_numerator,integer,Mental health providers numerator
+Table.Column,v062_denominator,integer,Mental health providers denominator
+Table.Column,v062_cilow,number,Mental health providers CI low
+Table.Column,v062_cihigh,number,Mental health providers CI high
+Table.Column,v062_other_data_1,number,Ratio of population to mental health providers.
+Table.Column,v005_rawvalue,integer,Preventable hospital stays raw value
+Table.Column,v005_numerator,number,Preventable hospital stays numerator
+Table.Column,v005_denominator,number,Preventable hospital stays denominator
+Table.Column,v005_cilow,number,Preventable hospital stays CI low
+Table.Column,v005_cihigh,number,Preventable hospital stays CI high
+Table.Column,v005_race_aian,integer,Preventable hospital stays (AIAN)
+Table.Column,v005_race_asian,integer,Preventable hospital stays (Asian/Pacific Islander)
+Table.Column,v005_race_black,integer,Preventable hospital stays (Black)
+Table.Column,v005_race_hispanic,integer,Preventable hospital stays (Hispanic)
+Table.Column,v005_race_white,integer,Preventable hospital stays (White)
+Table.Column,v050_rawvalue,number,Mammography screening raw value
+Table.Column,v050_numerator,number,Mammography screening numerator
+Table.Column,v050_denominator,number,Mammography screening denominator
+Table.Column,v050_cilow,number,Mammography screening CI low
+Table.Column,v050_cihigh,number,Mammography screening CI high
+Table.Column,v050_race_aian,number,Mammography screening (AIAN)
+Table.Column,v050_race_asian,number,Mammography screening (Asian/Pacific Islander)
+Table.Column,v050_race_black,number,Mammography screening (Black)
+Table.Column,v050_race_hispanic,number,Mammography screening (Hispanic)
+Table.Column,v050_race_white,number,Mammography screening (White)
+Table.Column,v155_rawvalue,number,Flu vaccinations raw value
+Table.Column,v155_numerator,number,Flu vaccinations numerator
+Table.Column,v155_denominator,number,Flu vaccinations denominator
+Table.Column,v155_cilow,number,Flu vaccinations CI low
+Table.Column,v155_cihigh,number,Flu vaccinations CI high
+Table.Column,v155_race_aian,number,Flu vaccinations (AIAN)
+Table.Column,v155_race_asian,number,Flu vaccinations (Asian/Pacific Islander)
+Table.Column,v155_race_black,number,Flu vaccinations (Black)
+Table.Column,v155_race_hispanic,number,Flu vaccinations (Hispanic)
+Table.Column,v155_race_white,number,Flu vaccinations (White)
+Table.Column,v021_rawvalue,number,High school graduation raw value
+Table.Column,v021_numerator,number,High school graduation numerator
+Table.Column,v021_denominator,number,High school graduation denominator
+Table.Column,v021_cilow,number,High school graduation CI low
+Table.Column,v021_cihigh,number,High school graduation CI high
+Table.Column,v069_rawvalue,number,Some college raw value
+Table.Column,v069_numerator,integer,Some college numerator
+Table.Column,v069_denominator,integer,Some college denominator
+Table.Column,v069_cilow,number,Some college CI low
+Table.Column,v069_cihigh,number,Some college CI high
+Table.Column,v023_rawvalue,number,Unemployment raw value
+Table.Column,v023_numerator,integer,Unemployment numerator
+Table.Column,v023_denominator,integer,Unemployment denominator
+Table.Column,v023_cilow,number,Unemployment CI low
+Table.Column,v023_cihigh,number,Unemployment CI high
+Table.Column,v024_rawvalue,number,Children in poverty raw value
+Table.Column,v024_numerator,integer,Children in poverty numerator
+Table.Column,v024_denominator,number,Children in poverty denominator
+Table.Column,v024_cilow,number,Children in poverty CI low
+Table.Column,v024_cihigh,number,Children in poverty CI high
+Table.Column,v024_race_aian,number,Children in poverty (AIAN)
+Table.Column,v024_race_aian_cilow,number,Children in poverty CI low (AIAN)
+Table.Column,v024_race_aian_cihigh,number,Children in poverty CI high (AIAN)
+Table.Column,v024_race_asian,number,Children in poverty (Asian/Pacific Islander)
+Table.Column,v024_race_asian_cilow,number,Children in poverty CI low (Asian/Pacific Islander)
+Table.Column,v024_race_asian_cihigh,number,Children in poverty CI high (Asian/Pacific Islander)
+Table.Column,v024_race_black,number,Children in poverty (Black)
+Table.Column,v024_race_black_cilow,number,Children in poverty CI low (Black)
+Table.Column,v024_race_black_cihigh,number,Children in poverty CI high (Black)
+Table.Column,v024_race_hispanic,number,Children in poverty (Hispanic)
+Table.Column,v024_race_hispanic_cilow,number,Children in poverty CI low (Hispanic)
+Table.Column,v024_race_hispanic_cihigh,number,Children in poverty CI high (Hispanic)
+Table.Column,v024_race_white,number,Children in poverty (White)
+Table.Column,v024_race_white_cilow,number,Children in poverty CI low (White)
+Table.Column,v024_race_white_cihigh,number,Children in poverty CI high (White)
+Table.Column,v044_rawvalue,number,Income inequality raw value
+Table.Column,v044_numerator,integer,Income inequality numerator
+Table.Column,v044_denominator,integer,Income inequality denominator
+Table.Column,v044_cilow,number,Income inequality CI low
+Table.Column,v044_cihigh,number,Income inequality CI high
+Table.Column,v082_rawvalue,number,Children in single-parent households raw value
+Table.Column,v082_numerator,integer,Children in single-parent households numerator
+Table.Column,v082_denominator,integer,Children in single-parent households denominator
+Table.Column,v082_cilow,number,Children in single-parent households CI low
+Table.Column,v082_cihigh,number,Children in single-parent households CI high
+Table.Column,v140_rawvalue,number,Social associations raw value
+Table.Column,v140_numerator,integer,Social associations numerator
+Table.Column,v140_denominator,integer,Social associations denominator
+Table.Column,v140_cilow,number,Social associations CI low
+Table.Column,v140_cihigh,number,Social associations CI high
+Table.Column,v043_rawvalue,number,Violent crime raw value
+Table.Column,v043_numerator,number,Violent crime numerator
+Table.Column,v043_denominator,number,Violent crime denominator
+Table.Column,v043_cilow,number,Violent crime CI low
+Table.Column,v043_cihigh,number,Violent crime CI high
+Table.Column,v135_rawvalue,number,Injury deaths raw value
+Table.Column,v135_numerator,integer,Injury deaths numerator
+Table.Column,v135_denominator,integer,Injury deaths denominator
+Table.Column,v135_cilow,number,Injury deaths CI low
+Table.Column,v135_cihigh,number,Injury deaths CI high
+Table.Column,v135_race_aian,number,Injury deaths (AIAN)
+Table.Column,v135_race_aian_cilow,number,Injury deaths CI low (AIAN)
+Table.Column,v135_race_aian_cihigh,number,Injury deaths CI high (AIAN)
+Table.Column,v135_race_asian,number,Injury deaths (Asian/Pacific Islander)
+Table.Column,v135_race_asian_cilow,number,Injury deaths CI low (Asian/Pacific Islander)
+Table.Column,v135_race_asian_cihigh,number,Injury deaths CI high (Asian/Pacific Islander)
+Table.Column,v135_race_black,number,Injury deaths (Black)
+Table.Column,v135_race_black_cilow,number,Injury deaths CI low (Black)
+Table.Column,v135_race_black_cihigh,number,Injury deaths CI high (Black)
+Table.Column,v135_race_hispanic,number,Injury deaths (Hispanic)
+Table.Column,v135_race_hispanic_cilow,number,Injury deaths CI low (Hispanic)
+Table.Column,v135_race_hispanic_cihigh,number,Injury deaths CI high (Hispanic)
+Table.Column,v135_race_white,number,Injury deaths (White)
+Table.Column,v135_race_white_cilow,number,Injury deaths CI low (White)
+Table.Column,v135_race_white_cihigh,number,Injury deaths CI high (White)
+Table.Column,v125_rawvalue,number,Air pollution - particulate matter raw value
+Table.Column,v125_numerator,number,Air pollution - particulate matter numerator
+Table.Column,v125_denominator,number,Air pollution - particulate matter denominator
+Table.Column,v125_cilow,number,Air pollution - particulate matter CI low
+Table.Column,v125_cihigh,number,Air pollution - particulate matter CI high
+Table.Column,v124_rawvalue,number,Drinking water violations raw value
+Table.Column,v124_numerator,number,Drinking water violations numerator
+Table.Column,v124_denominator,number,Drinking water violations denominator
+Table.Column,v124_cilow,number,Drinking water violations CI low
+Table.Column,v124_cihigh,number,Drinking water violations CI high
+Table.Column,v136_rawvalue,number,Severe housing problems raw value
+Table.Column,v136_numerator,integer,Severe housing problems numerator
+Table.Column,v136_denominator,integer,Severe housing problems denominator
+Table.Column,v136_cilow,number,Severe housing problems CI low
+Table.Column,v136_cihigh,number,Severe housing problems CI high
+Table.Column,v136_other_data_1,number,Percentage of households with high housing costs
+Table.Column,v136_other_data_1_cilow,number,Percentage of households with high housing costs CI low
+Table.Column,v136_other_data_1_cihigh,number,Percentage of households with high housing costs CI high
+Table.Column,v136_other_data_2,number,Percentage of households with overcrowding
+Table.Column,v136_other_data_2_cilow,number,Percentage of households with overcrowding CI low
+Table.Column,v136_other_data_2_cihigh,number,Percentage of households with overcrowding CI high
+Table.Column,v136_other_data_3,number,Percentage of households with lack of kitchen or plumbing facilities
+Table.Column,v136_other_data_3_cilow,number,Percentage of households with lack of kitchen or plumbing facilities CI low
+Table.Column,v136_other_data_3_cihigh,number,Percentage of households with lack of kitchen or plumbing facilities CI high
+Table.Column,v067_rawvalue,number,Driving alone to work raw value
+Table.Column,v067_numerator,integer,Driving alone to work numerator
+Table.Column,v067_denominator,integer,Driving alone to work denominator
+Table.Column,v067_cilow,number,Driving alone to work CI low
+Table.Column,v067_cihigh,number,Driving alone to work CI high
+Table.Column,v067_race_aian,number,Driving alone to work (AIAN)
+Table.Column,v067_race_aian_cilow,number,Driving alone to work CI low (AIAN)
+Table.Column,v067_race_aian_cihigh,number,Driving alone to work CI high (AIAN)
+Table.Column,v067_race_asian,number,Driving alone to work (Asian/Pacific Islander)
+Table.Column,v067_race_asian_cilow,number,Driving alone to work CI low (Asian/Pacific Islander)
+Table.Column,v067_race_asian_cihigh,number,Driving alone to work CI high (Asian/Pacific Islander)
+Table.Column,v067_race_black,number,Driving alone to work (Black)
+Table.Column,v067_race_black_cilow,number,Driving alone to work CI low (Black)
+Table.Column,v067_race_black_cihigh,number,Driving alone to work CI high (Black)
+Table.Column,v067_race_hispanic,number,Driving alone to work (Hispanic)
+Table.Column,v067_race_hispanic_cilow,number,Driving alone to work CI low (Hispanic)
+Table.Column,v067_race_hispanic_cihigh,number,Driving alone to work CI high (Hispanic)
+Table.Column,v067_race_white,number,Driving alone to work (White)
+Table.Column,v067_race_white_cilow,number,Driving alone to work CI low (White)
+Table.Column,v067_race_white_cihigh,number,Driving alone to work CI high (White)
+Table.Column,v137_rawvalue,number,Long commute - driving alone raw value
+Table.Column,v137_numerator,number,Long commute - driving alone numerator
+Table.Column,v137_denominator,integer,Long commute - driving alone denominator
+Table.Column,v137_cilow,number,Long commute - driving alone CI low
+Table.Column,v137_cihigh,number,Long commute - driving alone CI high
+Table.Column,v147_rawvalue,number,Life expectancy raw value
+Table.Column,v147_numerator,number,Life expectancy numerator
+Table.Column,v147_denominator,number,Life expectancy denominator
+Table.Column,v147_cilow,number,Life expectancy CI low
+Table.Column,v147_cihigh,number,Life expectancy CI high
+Table.Column,v147_race_aian,number,Life expectancy (AIAN)
+Table.Column,v147_race_aian_cilow,number,Life expectancy CI low (AIAN)
+Table.Column,v147_race_aian_cihigh,number,Life expectancy CI high (AIAN)
+Table.Column,v147_race_asian,number,Life expectancy (Asian/Pacific Islander)
+Table.Column,v147_race_asian_cilow,number,Life expectancy CI low (Asian/Pacific Islander)
+Table.Column,v147_race_asian_cihigh,number,Life expectancy CI high (Asian/Pacific Islander)
+Table.Column,v147_race_black,number,Life expectancy (Black)
+Table.Column,v147_race_black_cilow,number,Life expectancy CI low (Black)
+Table.Column,v147_race_black_cihigh,number,Life expectancy CI high (Black)
+Table.Column,v147_race_hispanic,number,Life expectancy (Hispanic)
+Table.Column,v147_race_hispanic_cilow,number,Life expectancy CI low (Hispanic)
+Table.Column,v147_race_hispanic_cihigh,number,Life expectancy CI high (Hispanic)
+Table.Column,v147_race_white,number,Life expectancy (White)
+Table.Column,v147_race_white_cilow,number,Life expectancy CI low (White)
+Table.Column,v147_race_white_cihigh,number,Life expectancy CI high (White)
+Table.Column,v127_rawvalue,number,Premature age-adjusted mortality raw value
+Table.Column,v127_numerator,integer,Premature age-adjusted mortality numerator
+Table.Column,v127_denominator,integer,Premature age-adjusted mortality denominator
+Table.Column,v127_cilow,number,Premature age-adjusted mortality CI low
+Table.Column,v127_cihigh,number,Premature age-adjusted mortality CI high
+Table.Column,v127_race_aian,number,Premature age-adjusted mortality (AIAN)
+Table.Column,v127_race_aian_cilow,number,Premature age-adjusted mortality CI low (AIAN)
+Table.Column,v127_race_aian_cihigh,number,Premature age-adjusted mortality CI high (AIAN)
+Table.Column,v127_race_asian,number,Premature age-adjusted mortality (Asian/Pacific Islander)
+Table.Column,v127_race_asian_cilow,number,Premature age-adjusted mortality CI low (Asian/Pacific Islander)
+Table.Column,v127_race_asian_cihigh,number,Premature age-adjusted mortality CI high (Asian/Pacific Islander)
+Table.Column,v127_race_black,number,Premature age-adjusted mortality (Black)
+Table.Column,v127_race_black_cilow,number,Premature age-adjusted mortality CI low (Black)
+Table.Column,v127_race_black_cihigh,number,Premature age-adjusted mortality CI high (Black)
+Table.Column,v127_race_hispanic,number,Premature age-adjusted mortality (Hispanic)
+Table.Column,v127_race_hispanic_cilow,number,Premature age-adjusted mortality CI low (Hispanic)
+Table.Column,v127_race_hispanic_cihigh,number,Premature age-adjusted mortality CI high (Hispanic)
+Table.Column,v127_race_white,number,Premature age-adjusted mortality (White)
+Table.Column,v127_race_white_cilow,number,Premature age-adjusted mortality CI low (White)
+Table.Column,v127_race_white_cihigh,number,Premature age-adjusted mortality CI high (White)
+Table.Column,v128_rawvalue,number,Child mortality raw value
+Table.Column,v128_numerator,integer,Child mortality numerator
+Table.Column,v128_denominator,integer,Child mortality denominator
+Table.Column,v128_cilow,number,Child mortality CI low
+Table.Column,v128_cihigh,number,Child mortality CI high
+Table.Column,v128_race_aian,number,Child mortality (AIAN)
+Table.Column,v128_race_aian_cilow,number,Child mortality CI low (AIAN)
+Table.Column,v128_race_aian_cihigh,number,Child mortality CI high (AIAN)
+Table.Column,v128_race_asian,number,Child mortality (Asian/Pacific Islander)
+Table.Column,v128_race_asian_cilow,number,Child mortality CI low (Asian/Pacific Islander)
+Table.Column,v128_race_asian_cihigh,number,Child mortality CI high (Asian/Pacific Islander)
+Table.Column,v128_race_black,number,Child mortality (Black)
+Table.Column,v128_race_black_cilow,number,Child mortality CI low (Black)
+Table.Column,v128_race_black_cihigh,number,Child mortality CI high (Black)
+Table.Column,v128_race_hispanic,number,Child mortality (Hispanic)
+Table.Column,v128_race_hispanic_cilow,number,Child mortality CI low (Hispanic)
+Table.Column,v128_race_hispanic_cihigh,number,Child mortality CI high (Hispanic)
+Table.Column,v128_race_white,number,Child mortality (White)
+Table.Column,v128_race_white_cilow,number,Child mortality CI low (White)
+Table.Column,v128_race_white_cihigh,number,Child mortality CI high (White)
+Table.Column,v129_rawvalue,number,Infant mortality raw value
+Table.Column,v129_numerator,integer,Infant mortality numerator
+Table.Column,v129_denominator,integer,Infant mortality denominator
+Table.Column,v129_cilow,number,Infant mortality CI low
+Table.Column,v129_cihigh,number,Infant mortality CI high
+Table.Column,v129_race_aian,number,Infant mortality (AIAN)
+Table.Column,v129_race_aian_cilow,number,Infant mortality CI low (AIAN)
+Table.Column,v129_race_aian_cihigh,number,Infant mortality CI high (AIAN)
+Table.Column,v129_race_asian,number,Infant mortality (Asian/Pacific Islander)
+Table.Column,v129_race_asian_cilow,number,Infant mortality CI low (Asian/Pacific Islander)
+Table.Column,v129_race_asian_cihigh,number,Infant mortality CI high (Asian/Pacific Islander)
+Table.Column,v129_race_black,number,Infant mortality (Black)
+Table.Column,v129_race_black_cilow,number,Infant mortality CI low (Black)
+Table.Column,v129_race_black_cihigh,number,Infant mortality CI high (Black)
+Table.Column,v129_race_hispanic,number,Infant mortality (Hispanic)
+Table.Column,v129_race_hispanic_cilow,number,Infant mortality CI low (Hispanic)
+Table.Column,v129_race_hispanic_cihigh,number,Infant mortality CI high (Hispanic)
+Table.Column,v129_race_white,number,Infant mortality (White)
+Table.Column,v129_race_white_cilow,number,Infant mortality CI low (White)
+Table.Column,v129_race_white_cihigh,number,Infant mortality CI high (White)
+Table.Column,v144_rawvalue,number,Frequent physical distress raw value
+Table.Column,v144_numerator,number,Frequent physical distress numerator
+Table.Column,v144_denominator,number,Frequent physical distress denominator
+Table.Column,v144_cilow,number,Frequent physical distress CI low
+Table.Column,v144_cihigh,number,Frequent physical distress CI high
+Table.Column,v145_rawvalue,number,Frequent mental distress raw value
+Table.Column,v145_numerator,number,Frequent mental distress numerator
+Table.Column,v145_denominator,number,Frequent mental distress denominator
+Table.Column,v145_cilow,number,Frequent mental distress CI low
+Table.Column,v145_cihigh,number,Frequent mental distress CI high
+Table.Column,v060_rawvalue,number,Diabetes prevalence raw value
+Table.Column,v060_numerator,integer,Diabetes prevalence numerator
+Table.Column,v060_denominator,number,Diabetes prevalence denominator
+Table.Column,v060_cilow,number,Diabetes prevalence CI low
+Table.Column,v060_cihigh,number,Diabetes prevalence CI high
+Table.Column,v061_rawvalue,number,HIV prevalence raw value
+Table.Column,v061_numerator,integer,HIV prevalence numerator
+Table.Column,v061_denominator,integer,HIV prevalence denominator
+Table.Column,v061_cilow,number,HIV prevalence CI low
+Table.Column,v061_cihigh,number,HIV prevalence CI high
+Table.Column,v139_rawvalue,number,Food insecurity raw value
+Table.Column,v139_numerator,integer,Food insecurity numerator
+Table.Column,v139_denominator,number,Food insecurity denominator
+Table.Column,v139_cilow,number,Food insecurity CI low
+Table.Column,v139_cihigh,number,Food insecurity CI high
+Table.Column,v083_rawvalue,number,Limited access to healthy foods raw value
+Table.Column,v083_numerator,number,Limited access to healthy foods numerator
+Table.Column,v083_denominator,integer,Limited access to healthy foods denominator
+Table.Column,v083_cilow,number,Limited access to healthy foods CI low
+Table.Column,v083_cihigh,number,Limited access to healthy foods CI high
+Table.Column,v138_rawvalue,number,Drug overdose deaths raw value
+Table.Column,v138_numerator,integer,Drug overdose deaths numerator
+Table.Column,v138_denominator,integer,Drug overdose deaths denominator
+Table.Column,v138_cilow,number,Drug overdose deaths CI low
+Table.Column,v138_cihigh,number,Drug overdose deaths CI high
+Table.Column,v138_race_aian,number,Drug overdose deaths (AIAN)
+Table.Column,v138_race_aian_cilow,number,Drug overdose deaths CI low (AIAN)
+Table.Column,v138_race_aian_cihigh,number,Drug overdose deaths CI high (AIAN)
+Table.Column,v138_race_asian,number,Drug overdose deaths (Asian/Pacific Islander)
+Table.Column,v138_race_asian_cilow,number,Drug overdose deaths CI low (Asian/Pacific Islander)
+Table.Column,v138_race_asian_cihigh,number,Drug overdose deaths CI high (Asian/Pacific Islander)
+Table.Column,v138_race_black,number,Drug overdose deaths (Black)
+Table.Column,v138_race_black_cilow,number,Drug overdose deaths CI low (Black)
+Table.Column,v138_race_black_cihigh,number,Drug overdose deaths CI high (Black)
+Table.Column,v138_race_hispanic,number,Drug overdose deaths (Hispanic)
+Table.Column,v138_race_hispanic_cilow,number,Drug overdose deaths CI low (Hispanic)
+Table.Column,v138_race_hispanic_cihigh,number,Drug overdose deaths CI high (Hispanic)
+Table.Column,v138_race_white,number,Drug overdose deaths (White)
+Table.Column,v138_race_white_cilow,number,Drug overdose deaths CI low (White)
+Table.Column,v138_race_white_cihigh,number,Drug overdose deaths CI high (White)
+Table.Column,v039_rawvalue,number,Motor vehicle crash deaths raw value
+Table.Column,v039_numerator,integer,Motor vehicle crash deaths numerator
+Table.Column,v039_denominator,integer,Motor vehicle crash deaths denominator
+Table.Column,v039_cilow,number,Motor vehicle crash deaths CI low
+Table.Column,v039_cihigh,number,Motor vehicle crash deaths CI high
+Table.Column,v039_race_aian,number,Motor vehicle crash deaths (AIAN)
+Table.Column,v039_race_aian_cilow,number,Motor vehicle crash deaths CI low (AIAN)
+Table.Column,v039_race_aian_cihigh,number,Motor vehicle crash deaths CI high (AIAN)
+Table.Column,v039_race_asian,number,Motor vehicle crash deaths (Asian/Pacific Islander)
+Table.Column,v039_race_asian_cilow,number,Motor vehicle crash deaths CI low (Asian/Pacific Islander)
+Table.Column,v039_race_asian_cihigh,number,Motor vehicle crash deaths CI high (Asian/Pacific Islander)
+Table.Column,v039_race_black,number,Motor vehicle crash deaths (Black)
+Table.Column,v039_race_black_cilow,number,Motor vehicle crash deaths CI low (Black)
+Table.Column,v039_race_black_cihigh,number,Motor vehicle crash deaths CI high (Black)
+Table.Column,v039_race_hispanic,number,Motor vehicle crash deaths (Hispanic)
+Table.Column,v039_race_hispanic_cilow,number,Motor vehicle crash deaths CI low (Hispanic)
+Table.Column,v039_race_hispanic_cihigh,number,Motor vehicle crash deaths CI high (Hispanic)
+Table.Column,v039_race_white,number,Motor vehicle crash deaths (White)
+Table.Column,v039_race_white_cilow,number,Motor vehicle crash deaths CI low (White)
+Table.Column,v039_race_white_cihigh,number,Motor vehicle crash deaths CI high (White)
+Table.Column,v143_rawvalue,number,Insufficient sleep raw value
+Table.Column,v143_numerator,number,Insufficient sleep numerator
+Table.Column,v143_denominator,number,Insufficient sleep denominator
+Table.Column,v143_cilow,number,Insufficient sleep CI low
+Table.Column,v143_cihigh,number,Insufficient sleep CI high
+Table.Column,v003_rawvalue,number,Uninsured adults raw value
+Table.Column,v003_numerator,integer,Uninsured adults numerator
+Table.Column,v003_denominator,integer,Uninsured adults denominator
+Table.Column,v003_cilow,number,Uninsured adults CI low
+Table.Column,v003_cihigh,number,Uninsured adults CI high
+Table.Column,v122_rawvalue,number,Uninsured children raw value
+Table.Column,v122_numerator,integer,Uninsured children numerator
+Table.Column,v122_denominator,integer,Uninsured children denominator
+Table.Column,v122_cilow,number,Uninsured children CI low
+Table.Column,v122_cihigh,number,Uninsured children CI high
+Table.Column,v131_rawvalue,number,Other primary care providers raw value
+Table.Column,v131_numerator,integer,Other primary care providers numerator
+Table.Column,v131_denominator,integer,Other primary care providers denominator
+Table.Column,v131_cilow,number,Other primary care providers CI low
+Table.Column,v131_cihigh,number,Other primary care providers CI high
+Table.Column,v131_other_data_1,number,Ratio of population to primary care providers other than physicians.
+Table.Column,v149_rawvalue,number,Disconnected youth raw value
+Table.Column,v149_numerator,integer,Disconnected youth numerator
+Table.Column,v149_denominator,integer,Disconnected youth denominator
+Table.Column,v149_cilow,number,Disconnected youth CI low
+Table.Column,v149_cihigh,number,Disconnected youth CI high
+Table.Column,v159_rawvalue,number,Reading scores raw value
+Table.Column,v159_numerator,number,Reading scores numerator
+Table.Column,v159_denominator,number,Reading scores denominator
+Table.Column,v159_cilow,number,Reading scores CI low
+Table.Column,v159_cihigh,number,Reading scores CI high
+Table.Column,v159_race_aian,number,Reading scores (AIAN)
+Table.Column,v159_race_asian,number,Reading scores (Asian/Pacific Islander)
+Table.Column,v159_race_black,number,Reading scores (Black)
+Table.Column,v159_race_hispanic,number,Reading scores (Hispanic)
+Table.Column,v159_race_white,number,Reading scores (White)
+Table.Column,v160_rawvalue,number,Math scores raw value
+Table.Column,v160_numerator,number,Math scores numerator
+Table.Column,v160_denominator,number,Math scores denominator
+Table.Column,v160_cilow,number,Math scores CI low
+Table.Column,v160_cihigh,number,Math scores CI high
+Table.Column,v160_race_aian,number,Math scores (AIAN)
+Table.Column,v160_race_asian,number,Math scores (Asian/Pacific Islander)
+Table.Column,v160_race_black,number,Math scores (Black)
+Table.Column,v160_race_hispanic,number,Math scores (Hispanic)
+Table.Column,v160_race_white,number,Math scores (White)
+Table.Column,v063_rawvalue,integer,Median household income raw value
+Table.Column,v063_numerator,number,Median household income numerator
+Table.Column,v063_denominator,number,Median household income denominator
+Table.Column,v063_cilow,number,Median household income CI low
+Table.Column,v063_cihigh,number,Median household income CI high
+Table.Column,v063_race_aian,integer,Median household income (AIAN)
+Table.Column,v063_race_aian_cilow,number,Median household income CI low (AIAN)
+Table.Column,v063_race_aian_cihigh,number,Median household income CI high (AIAN)
+Table.Column,v063_race_asian,integer,Median household income (Asian)
+Table.Column,v063_race_asian_cilow,number,Median household income CI low (Asian)
+Table.Column,v063_race_asian_cihigh,number,Median household income CI high (Asian)
+Table.Column,v063_race_black,integer,Median household income (Black)
+Table.Column,v063_race_black_cilow,number,Median household income CI low (Black)
+Table.Column,v063_race_black_cihigh,number,Median household income CI high (Black)
+Table.Column,v063_race_hispanic,integer,Median household income (Hispanic)
+Table.Column,v063_race_hispanic_cilow,number,Median household income CI low (Hispanic)
+Table.Column,v063_race_hispanic_cihigh,number,Median household income CI high (Hispanic)
+Table.Column,v063_race_white,integer,Median household income (White)
+Table.Column,v063_race_white_cilow,number,Median household income CI low (White)
+Table.Column,v063_race_white_cihigh,number,Median household income CI high (White)
+Table.Column,v065_rawvalue,number,Children eligible for free or reduced price lunch raw value
+Table.Column,v065_numerator,integer,Children eligible for free or reduced price lunch numerator
+Table.Column,v065_denominator,integer,Children eligible for free or reduced price lunch denominator
+Table.Column,v065_cilow,number,Children eligible for free or reduced price lunch CI low
+Table.Column,v065_cihigh,number,Children eligible for free or reduced price lunch CI high
+Table.Column,v141_rawvalue,number,Residential segregation - Black/White raw value
+Table.Column,v141_numerator,number,Residential segregation - Black/White numerator
+Table.Column,v141_denominator,number,Residential segregation - Black/White denominator
+Table.Column,v141_cilow,number,Residential segregation - Black/White CI low
+Table.Column,v141_cihigh,number,Residential segregation - Black/White CI high
+Table.Column,v142_rawvalue,number,Residential segregation - non-White/White raw value
+Table.Column,v142_numerator,number,Residential segregation - non-White/White numerator
+Table.Column,v142_denominator,number,Residential segregation - non-White/White denominator
+Table.Column,v142_cilow,number,Residential segregation - non-White/White CI low
+Table.Column,v142_cihigh,number,Residential segregation - non-White/White CI high
+Table.Column,v015_rawvalue,number,Homicides raw value
+Table.Column,v015_numerator,integer,Homicides numerator
+Table.Column,v015_denominator,integer,Homicides denominator
+Table.Column,v015_cilow,number,Homicides CI low
+Table.Column,v015_cihigh,number,Homicides CI high
+Table.Column,v015_race_aian,number,Homicides (AIAN)
+Table.Column,v015_race_aian_cilow,number,Homicides CI low (AIAN)
+Table.Column,v015_race_aian_cihigh,number,Homicides CI high (AIAN)
+Table.Column,v015_race_asian,number,Homicides (Asian/Pacific Islander)
+Table.Column,v015_race_asian_cilow,number,Homicides CI low (Asian/Pacific Islander)
+Table.Column,v015_race_asian_cihigh,number,Homicides CI high (Asian/Pacific Islander)
+Table.Column,v015_race_black,number,Homicides (Black)
+Table.Column,v015_race_black_cilow,number,Homicides CI low (Black)
+Table.Column,v015_race_black_cihigh,number,Homicides CI high (Black)
+Table.Column,v015_race_hispanic,number,Homicides (Hispanic)
+Table.Column,v015_race_hispanic_cilow,number,Homicides CI low (Hispanic)
+Table.Column,v015_race_hispanic_cihigh,number,Homicides CI high (Hispanic)
+Table.Column,v015_race_white,number,Homicides (White)
+Table.Column,v015_race_white_cilow,number,Homicides CI low (White)
+Table.Column,v015_race_white_cihigh,number,Homicides CI high (White)
+Table.Column,v161_rawvalue,number,Suicides raw value
+Table.Column,v161_numerator,integer,Suicides numerator
+Table.Column,v161_denominator,integer,Suicides denominator
+Table.Column,v161_cilow,number,Suicides CI low
+Table.Column,v161_cihigh,number,Suicides CI high
+Table.Column,v161_other_data_1,number,Crude suicide rate
+Table.Column,v161_race_aian,number,Suicides (AIAN)
+Table.Column,v161_race_aian_cilow,number,Suicides CI low (AIAN)
+Table.Column,v161_race_aian_cihigh,number,Suicides CI high (AIAN)
+Table.Column,v161_race_asian,number,Suicides (Asian/Pacific Islander)
+Table.Column,v161_race_asian_cilow,number,Suicides CI low (Asian/Pacific Islander)
+Table.Column,v161_race_asian_cihigh,number,Suicides CI high (Asian/Pacific Islander)
+Table.Column,v161_race_black,number,Suicides (Black)
+Table.Column,v161_race_black_cilow,number,Suicides CI low (Black)
+Table.Column,v161_race_black_cihigh,number,Suicides CI high (Black)
+Table.Column,v161_race_hispanic,number,Suicides (Hispanic)
+Table.Column,v161_race_hispanic_cilow,number,Suicides CI low (Hispanic)
+Table.Column,v161_race_hispanic_cihigh,number,Suicides CI high (Hispanic)
+Table.Column,v161_race_white,number,Suicides (White)
+Table.Column,v161_race_white_cilow,number,Suicides CI low (White)
+Table.Column,v161_race_white_cihigh,number,Suicides CI high (White)
+Table.Column,v148_rawvalue,number,Firearm fatalities raw value
+Table.Column,v148_numerator,integer,Firearm fatalities numerator
+Table.Column,v148_denominator,integer,Firearm fatalities denominator
+Table.Column,v148_cilow,number,Firearm fatalities CI low
+Table.Column,v148_cihigh,number,Firearm fatalities CI high
+Table.Column,v148_race_aian,number,Firearm fatalities (AIAN)
+Table.Column,v148_race_aian_cilow,number,Firearm fatalities CI low (AIAN)
+Table.Column,v148_race_aian_cihigh,number,Firearm fatalities CI high (AIAN)
+Table.Column,v148_race_asian,number,Firearm fatalities (Asian/Pacific Islander)
+Table.Column,v148_race_asian_cilow,number,Firearm fatalities CI low (Asian/Pacific Islander)
+Table.Column,v148_race_asian_cihigh,number,Firearm fatalities CI high (Asian/Pacific Islander)
+Table.Column,v148_race_black,number,Firearm fatalities (Black)
+Table.Column,v148_race_black_cilow,number,Firearm fatalities CI low (Black)
+Table.Column,v148_race_black_cihigh,number,Firearm fatalities CI high (Black)
+Table.Column,v148_race_hispanic,number,Firearm fatalities (Hispanic)
+Table.Column,v148_race_hispanic_cilow,number,Firearm fatalities CI low (Hispanic)
+Table.Column,v148_race_hispanic_cihigh,number,Firearm fatalities CI high (Hispanic)
+Table.Column,v148_race_white,number,Firearm fatalities (White)
+Table.Column,v148_race_white_cilow,number,Firearm fatalities CI low (White)
+Table.Column,v148_race_white_cihigh,number,Firearm fatalities CI high (White)
+Table.Column,v158_rawvalue,number,Juvenile arrests raw value
+Table.Column,v158_numerator,number,Juvenile arrests numerator
+Table.Column,v158_denominator,integer,Juvenile arrests denominator
+Table.Column,v158_cilow,number,Juvenile arrests CI low
+Table.Column,v158_cihigh,number,Juvenile arrests CI high
+Table.Column,v158_other_data_1,integer,Number of juvenile delinquency cases formally processed by a juvenile court
+Table.Column,v158_other_data_2,integer,Number of informally handled juvenile delinquency cases
+Table.Column,v156_rawvalue,number,Traffic volume raw value
+Table.Column,v156_numerator,number,Traffic volume numerator
+Table.Column,v156_denominator,number,Traffic volume denominator
+Table.Column,v156_cilow,number,Traffic volume CI low
+Table.Column,v156_cihigh,number,Traffic volume CI high
+Table.Column,v153_rawvalue,number,Homeownership raw value
+Table.Column,v153_numerator,integer,Homeownership numerator
+Table.Column,v153_denominator,integer,Homeownership denominator
+Table.Column,v153_cilow,number,Homeownership CI low
+Table.Column,v153_cihigh,number,Homeownership CI high
+Table.Column,v154_rawvalue,number,Severe housing cost burden raw value
+Table.Column,v154_numerator,integer,Severe housing cost burden numerator
+Table.Column,v154_denominator,integer,Severe housing cost burden denominator
+Table.Column,v154_cilow,number,Severe housing cost burden CI low
+Table.Column,v154_cihigh,number,Severe housing cost burden CI high
+Table.Column,v051_rawvalue,integer,Population raw value
+Table.Column,v051_numerator,number,Population numerator
+Table.Column,v051_denominator,number,Population denominator
+Table.Column,v051_cilow,number,Population CI low
+Table.Column,v051_cihigh,number,Population CI high
+Table.Column,v052_rawvalue,number,% below 18 years of age raw value
+Table.Column,v052_numerator,integer,% below 18 years of age numerator
+Table.Column,v052_denominator,integer,% below 18 years of age denominator
+Table.Column,v052_cilow,number,% below 18 years of age CI low
+Table.Column,v052_cihigh,number,% below 18 years of age CI high
+Table.Column,v053_rawvalue,number,% 65 and older raw value
+Table.Column,v053_numerator,integer,% 65 and older numerator
+Table.Column,v053_denominator,integer,% 65 and older denominator
+Table.Column,v053_cilow,number,% 65 and older CI low
+Table.Column,v053_cihigh,number,% 65 and older CI high
+Table.Column,v054_rawvalue,number,% Non-Hispanic Black raw value
+Table.Column,v054_numerator,integer,% Non-Hispanic Black numerator
+Table.Column,v054_denominator,integer,% Non-Hispanic Black denominator
+Table.Column,v054_cilow,number,% Non-Hispanic Black CI low
+Table.Column,v054_cihigh,number,% Non-Hispanic Black CI high
+Table.Column,v055_rawvalue,number,% American Indian & Alaska Native raw value
+Table.Column,v055_numerator,integer,% American Indian & Alaska Native numerator
+Table.Column,v055_denominator,integer,% American Indian & Alaska Native denominator
+Table.Column,v055_cilow,number,% American Indian & Alaska Native CI low
+Table.Column,v055_cihigh,number,% American Indian & Alaska Native CI high
+Table.Column,v081_rawvalue,number,% Asian raw value
+Table.Column,v081_numerator,integer,% Asian numerator
+Table.Column,v081_denominator,integer,% Asian denominator
+Table.Column,v081_cilow,number,% Asian CI low
+Table.Column,v081_cihigh,number,% Asian CI high
+Table.Column,v080_rawvalue,number,% Native Hawaiian/Other Pacific Islander raw value
+Table.Column,v080_numerator,integer,% Native Hawaiian/Other Pacific Islander numerator
+Table.Column,v080_denominator,integer,% Native Hawaiian/Other Pacific Islander denominator
+Table.Column,v080_cilow,number,% Native Hawaiian/Other Pacific Islander CI low
+Table.Column,v080_cihigh,number,% Native Hawaiian/Other Pacific Islander CI high
+Table.Column,v056_rawvalue,number,% Hispanic raw value
+Table.Column,v056_numerator,integer,% Hispanic numerator
+Table.Column,v056_denominator,integer,% Hispanic denominator
+Table.Column,v056_cilow,number,% Hispanic CI low
+Table.Column,v056_cihigh,number,% Hispanic CI high
+Table.Column,v126_rawvalue,number,% Non-Hispanic White raw value
+Table.Column,v126_numerator,integer,% Non-Hispanic White numerator
+Table.Column,v126_denominator,integer,% Non-Hispanic White denominator
+Table.Column,v126_cilow,number,% Non-Hispanic White CI low
+Table.Column,v126_cihigh,number,% Non-Hispanic White CI high
+Table.Column,v059_rawvalue,number,% not proficient in English raw value
+Table.Column,v059_numerator,integer,% not proficient in English numerator
+Table.Column,v059_denominator,integer,% not proficient in English denominator
+Table.Column,v059_cilow,number,% not proficient in English CI low
+Table.Column,v059_cihigh,number,% not proficient in English CI high
+Table.Column,v057_rawvalue,number,% Females raw value
+Table.Column,v057_numerator,integer,% Females numerator
+Table.Column,v057_denominator,integer,% Females denominator
+Table.Column,v057_cilow,number,% Females CI low
+Table.Column,v057_cihigh,number,% Females CI high
+Table.Column,v058_rawvalue,number,% Rural raw value
+Table.Column,v058_numerator,integer,% Rural numerator
+Table.Column,v058_denominator,integer,% Rural denominator
+Table.Column,v058_cilow,number,% Rural CI low
+Table.Column,v058_cihigh,number,% Rural CI high
+Table.Column,v104_rawvalue,number,Communicable disease raw value
+Table.Column,v104_numerator,integer,Communicable disease numerator
+Table.Column,v104_denominator,integer,Communicable disease denominator
+Table.Column,v104_cilow,number,Communicable disease CI low
+Table.Column,v104_cihigh,number,Communicable disease CI high
+Table.Column,v099_rawvalue,number,Cancer incidence raw value
+Table.Column,v099_numerator,integer,Cancer incidence numerator
+Table.Column,v099_denominator,integer,Cancer incidence denominator
+Table.Column,v099_cilow,number,Cancer incidence CI low
+Table.Column,v099_cihigh,number,Cancer incidence CI high
+Table.Column,v100_rawvalue,number,Coronary heart disease hospitalizations raw value
+Table.Column,v100_numerator,integer,Coronary heart disease hospitalizations numerator
+Table.Column,v100_denominator,number,Coronary heart disease hospitalizations denominator
+Table.Column,v100_cilow,number,Coronary heart disease hospitalizations CI low
+Table.Column,v100_cihigh,number,Coronary heart disease hospitalizations CI high
+Table.Column,v101_rawvalue,number,Cerebrovascular disease hospitalizations raw value
+Table.Column,v101_numerator,integer,Cerebrovascular disease hospitalizations numerator
+Table.Column,v101_denominator,number,Cerebrovascular disease hospitalizations denominator
+Table.Column,v101_cilow,number,Cerebrovascular disease hospitalizations CI low
+Table.Column,v101_cihigh,number,Cerebrovascular disease hospitalizations CI high
+Table.Column,v010_rawvalue,number,Smoking during pregnancy raw value
+Table.Column,v010_numerator,integer,Smoking during pregnancy numerator
+Table.Column,v010_denominator,integer,Smoking during pregnancy denominator
+Table.Column,v010_cilow,number,Smoking during pregnancy CI low
+Table.Column,v010_cihigh,number,Smoking during pregnancy CI high
+Table.Column,v150_rawvalue,number,Opioid hospital visits raw value
+Table.Column,v150_numerator,integer,Opioid hospital visits numerator
+Table.Column,v150_denominator,integer,Opioid hospital visits denominator
+Table.Column,v150_cilow,number,Opioid hospital visits CI low
+Table.Column,v150_cihigh,number,Opioid hospital visits CI high
+Table.Column,v109_rawvalue,number,Alcohol-related hospitalizations raw value
+Table.Column,v109_numerator,integer,Alcohol-related hospitalizations numerator
+Table.Column,v109_denominator,number,Alcohol-related hospitalizations denominator
+Table.Column,v109_cilow,number,Alcohol-related hospitalizations CI low
+Table.Column,v109_cihigh,number,Alcohol-related hospitalizations CI high
+Table.Column,v018_rawvalue,number,Motor vehicle crash occupancy rate raw value
+Table.Column,v018_numerator,integer,Motor vehicle crash occupancy rate numerator
+Table.Column,v018_denominator,integer,Motor vehicle crash occupancy rate denominator
+Table.Column,v018_cilow,number,Motor vehicle crash occupancy rate CI low
+Table.Column,v018_cihigh,number,Motor vehicle crash occupancy rate CI high
+Table.Column,v019_rawvalue,number,On-road motor vehicle crash-related ER visits raw value
+Table.Column,v019_numerator,integer,On-road motor vehicle crash-related ER visits numerator
+Table.Column,v019_denominator,integer,On-road motor vehicle crash-related ER visits denominator
+Table.Column,v019_cilow,number,On-road motor vehicle crash-related ER visits CI low
+Table.Column,v019_cihigh,number,On-road motor vehicle crash-related ER visits CI high
+Table.Column,v103_rawvalue,number,Childhood immunizations raw value
+Table.Column,v103_numerator,number,Childhood immunizations numerator
+Table.Column,v103_denominator,number,Childhood immunizations denominator
+Table.Column,v103_cilow,number,Childhood immunizations CI low
+Table.Column,v103_cihigh,number,Childhood immunizations CI high
+Table.Column,v116_rawvalue,number,Reading proficiency raw value
+Table.Column,v116_numerator,integer,Reading proficiency numerator
+Table.Column,v116_denominator,integer,Reading proficiency denominator
+Table.Column,v116_cilow,number,Reading proficiency CI low
+Table.Column,v116_cihigh,number,Reading proficiency CI high
+Table.Column,v117_rawvalue,integer,W-2 enrollment raw value
+Table.Column,v117_numerator,number,W-2 enrollment numerator
+Table.Column,v117_denominator,number,W-2 enrollment denominator
+Table.Column,v117_cilow,number,W-2 enrollment CI low
+Table.Column,v117_cihigh,number,W-2 enrollment CI high
+Table.Column,v118_rawvalue,number,Poverty raw value
+Table.Column,v118_numerator,integer,Poverty numerator
+Table.Column,v118_denominator,number,Poverty denominator
+Table.Column,v118_cilow,number,Poverty CI low
+Table.Column,v118_cihigh,number,Poverty CI high
+Table.Column,v120_rawvalue,number,Older adults living alone raw value
+Table.Column,v120_numerator,integer,Older adults living alone numerator
+Table.Column,v120_denominator,integer,Older adults living alone denominator
+Table.Column,v120_cilow,number,Older adults living alone CI low
+Table.Column,v120_cihigh,number,Older adults living alone CI high
+Table.Column,v119_rawvalue,number,Child abuse raw value
+Table.Column,v119_numerator,integer,Child abuse numerator
+Table.Column,v119_denominator,integer,Child abuse denominator
+Table.Column,v119_cilow,number,Child abuse CI low
+Table.Column,v119_cihigh,number,Child abuse CI high
+Table.Column,v106_rawvalue,number,Injury hospitalizations raw value
+Table.Column,v106_numerator,integer,Injury hospitalizations numerator
+Table.Column,v106_denominator,integer,Injury hospitalizations denominator
+Table.Column,v106_cilow,number,Injury hospitalizations CI low
+Table.Column,v106_cihigh,number,Injury hospitalizations CI high
+Table.Column,v105_rawvalue,number,Self-inflicted injury hospitalizations raw value
+Table.Column,v105_numerator,integer,Self-inflicted injury hospitalizations numerator
+Table.Column,v105_denominator,integer,Self-inflicted injury hospitalizations denominator
+Table.Column,v105_cilow,number,Self-inflicted injury hospitalizations CI low
+Table.Column,v105_cihigh,number,Self-inflicted injury hospitalizations CI high
+Table.Column,v107_rawvalue,number,Fall fatalities 65+ raw value
+Table.Column,v107_numerator,integer,Fall fatalities 65+ numerator
+Table.Column,v107_denominator,integer,Fall fatalities 65+ denominator
+Table.Column,v107_cilow,number,Fall fatalities 65+ CI low
+Table.Column,v107_cihigh,number,Fall fatalities 65+ CI high
+Table.Column,v123_rawvalue,number,Year structure built raw value
+Table.Column,v123_numerator,integer,Year structure built numerator
+Table.Column,v123_denominator,integer,Year structure built denominator
+Table.Column,v123_cilow,number,Year structure built CI low
+Table.Column,v123_cihigh,number,Year structure built CI high
+Table.Column,v008_rawvalue,integer,Male population 0-17 raw value
+Table.Column,v013_rawvalue,integer,Male population 18-44 raw value
+Table.Column,v016_rawvalue,integer,Male population 45-64 raw value
+Table.Column,v017_rawvalue,integer,Male population 65+ raw value
+Table.Column,v025_rawvalue,integer,Total male population raw value
+Table.Column,v026_rawvalue,integer,Female population 0-17 raw value
+Table.Column,v027_rawvalue,integer,Female population 18-44 raw value
+Table.Column,v031_rawvalue,integer,Female population 45-64 raw value
+Table.Column,v032_rawvalue,integer,Female population 65+ raw value
+Table.Column,v035_rawvalue,integer,Total female population raw value
+Table.Column,v097_rawvalue,number,Population growth raw value
