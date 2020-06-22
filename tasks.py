@@ -1,32 +1,37 @@
+# Task definitions for invoke
+# You must first install invoke, https://www.pyinvoke.org/
+
+# You can also create you own tasks
 from invoke import task
 
-s3_bucket='library.metatab.org'
-wp_site='data.sandiegodata.org'
+from metapack_build.tasks.package import ns
 
-groups = ['Health']
-tags = ['county','national']
+# To configure options for invoke functions you can:
+# - Set values in the 'invoke' section of `~/.metapack.yaml
+# - Use one of the other invoke config options:
+#   http://docs.pyinvoke.org/en/stable/concepts/configuration.html#the-configuration-hierarchy
+# - Set the configuration in this file:
 
-group_flags = ' '.join([ f"-g{g}" for g in groups])
-tag_flags = ' '.join([ f"-t{t}" for t in tags])
+# ns.configure(
+#    {
+#        'metapack':
+#            {
+#                's3_bucket': 'bucket_name',
+#                'wp_site': 'wp sot name',
+#                'groups': None,
+#                'tags': None
+#            }
+#    }
+# )
 
-def force_flag(force):
-    return '-F' if force else ''
+# However, the `groups` and `tags` hould really be set in the `metatada.csv`
+# file, and `s3_bucket` and `wp_site` should be set at the collection or global level
 
-wp_flags = f' -w {wp_site} {group_flags} {tag_flags}' if wp_site else ''
-s3_flags = f' -s {s3_bucket}' if s3_bucket else ''
 
 @task
-def make(c, force=False):
-    """Build, write to S3, and publish to wordpress, but only if necessary"""
-    c.run(f'mp -q  make {force_flag(force)} -r  -b {s3_flags} {wp_flags}' )
+def example_task(c):
+    """An exmaple Invoke task"""
+    c.run("echo 'this is an example task' ")
 
-@task
-def build(c, force=False):
-    c.run(f"mp build -r {force_flag(force)}")
-    
-@task
-def publish(c):
-    if s3_bucket:
-        c.run(f"mp s3 -s {s3_bucket}")
-    if wp_site:
-        c.run(f"mp wp -s {wp_site} {group_flags} {tag_flags} -p")
+
+ns.add_task(example_task)
