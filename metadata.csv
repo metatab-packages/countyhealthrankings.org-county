@@ -1,5 +1,5 @@
 Declare,metatab-latest
-Title,County Health Rakings
+Title,County Health Rankings
 Description,"The CHR&R program provides data, evidence, guidance, and examples to build"
 Description,awareness of the multiple factors that influence health and support community
 Description,leaders working to improve health and increase health equity. The Rankings are
@@ -7,20 +7,20 @@ Description,unique in their ability to measure the health of nearly every county
 Description,"states,and are complemented by guidance, tools, and resources designed to"
 Description,accelerate community learning and action.
 Identifier,64b03215-0048-4e04-b532-43a9f2c281c4
-Name,countyhealthrankings.org-county-1.1.2
+Name,countyhealthrankings.org-county-1.1.3
 Dataset,county
 Origin,countyhealthrankings.org
 Time,
 Space,
 Grain,
 Variant,
-Version,1.1.2
+Version,1.1.3
 Version.Major,1
 Version.Minor,1
-Version.Patch,2
+Version.Patch,3
 Group,health
 Created,2020-05-13T15:07:53
-Modified,2020-05-21T04:26:35
+Modified,2020-06-24T21:58:32
 Updatefrequency,P1W
 Giturl,https://github.com/CivicKnowledge/tablecloth.io.git
 
